@@ -7,7 +7,6 @@ export default {
   data () {
     return {
       datacollection: {
-        // Data to be represented on x-axis
         labels: [
           '02/مارس',
           '03/مارس',
@@ -106,18 +105,34 @@ export default {
           '04/يونيو',
           '05/يونيو',
           '06/يونيو',
-          '07/يونيو'
+          '07/يونيو',
+          '08/يونيو',
+          '09/يونيو',
+          '10/يونيو',
+          '11/يونيو',
+          '12/يونيو',
+          '13/يونيو',
+          '14/يونيو',
+          '15/يونيو',
+          '16/يونيو',
+          '17/يونيو',
+          '18/يونيو',
+          '19/يونيو',
+          '20/يونيو',
+          '21/يونيو',
+          '22/يونيو',
+          '23/يونيو',
+          '24/يونيو',
+          '25/يونيو',
+          '26/يونيو',
+          '27/يونيو'
         ],
         datasets: [{
           label: 'حالات مؤكدة',
-          // backgroundColor: 'transparent',
           backgroundColor: 'blue',
-          // pointBackgroundColor: 'blue',
-          // borderColor: 'blue',
           borderWidth: 3,
           pointBorderColor: '#249EBF',
           fill: false,
-          // Data to be represented on y-axis
           data: [
             1,
             0,
@@ -216,7 +231,27 @@ export default {
             81,
             27,
             80,
-            73
+            73,
+            78,
+            135,
+            71,
+            29,
+            73,
+            82,
+            101,
+            92,
+            46,
+            66,
+            77,
+            539,
+            226,
+            138,
+            195,
+            172,
+            563,
+            431,
+            295,
+            244
           ]
         },
         {
@@ -318,14 +353,32 @@ export default {
             329,
             20,
             47,
-            49
+            49,
+            44,
+            85,
+            72,
+            18,
+            35,
+            78,
+            69,
+            63,
+            109,
+            56,
+            48,
+            76,
+            106,
+            61,
+            82,
+            41,
+            61,
+            32,
+            156,
+            67
           ],
           label: 'المتعافون',
           lineTension: 0,
           backgroundColor: 'green',
-          // backgroundColor: '#FA944B',
-          // borderColor: '#ccffcc',
-          borderWidth: 4,
+          borderWidth: 3,
           pointBackgroundColor: 'green',
           fill: false
         },
@@ -373,7 +426,7 @@ export default {
             10,
             4,
             7,
-            8, // cloroquin
+            8, // cloroquine
             0,
             1,
             3,
@@ -428,18 +481,36 @@ export default {
             2,
             0,
             0,
-            0
+            0,
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            1,
+            1,
+            2
           ],
           label: 'الوفيات',
           lineTension: 0,
           backgroundColor: 'red',
-          // borderColor: 'red',
-          borderWidth: 4,
+          borderWidth: 3,
           pointBackgroundColor: 'red',
           fill: false
         }]
       },
-      // Chart.js options that controls the appearance of the chart
       options: {
         datasets: { bar: { categoryPercentage: 1.0, barPercentage: 0.9 } },
         elements: { line: { fill: false },
@@ -468,8 +539,6 @@ export default {
             }
           }],
           xAxes: [{
-            // barPercentage: 0.6,
-            // categoryPercentage: 1.2,
             display: true,
             stacked: true,
             scaleLabel: {
@@ -498,7 +567,6 @@ export default {
     }
   },
   mounted () {
-    // renderChart function renders the chart with the datacollection and options object.
     this.renderChart(this.datacollection, this.options)
   }
 }

@@ -7,7 +7,6 @@ export default {
   data () {
     return {
       datacollection: {
-        // Data to be represented on x-axis
         labels: [
           'بني ملال-خنيفرة',
           'البيضاء-سطات',
@@ -24,29 +23,26 @@ export default {
         ],
         datasets: [{
           backgroundColor: 'blue',
-          // borderColor: colors[1],
           borderWidth: 1,
-          // Data to be represented on y-axis
           data: [
-            1.52,
-            33.65,
-            7.13,
-            0.06,
-            12.48,
-            0.55,
-            0.06,
-            17.64,
-            2.36,
-            9.10,
-            1.09,
-            14.37
+            1.26,
+            28.12,
+            4.93,
+            0.09,
+            10.07,
+            0.60,
+            2.92,
+            15.86,
+            1.69,
+            16.18,
+            0.76,
+            17.50
           ]
         }
         ]
       },
-      // Chart.js options that controls the appearance of the chart
       options: {
-        datasets: { bar: { categoryPercentage: 0.6, barPercentage: 1.0 } },
+        datasets: { bar: { categoryPercentage: 0.6, barPercentage: 0.6 } },
         tooltips: {
           mode: 'index',
           intersect: false
@@ -69,8 +65,6 @@ export default {
             }
           },
           xAxes: [{
-            // barPercentage: 0.6,
-            // categoryPercentage: 0.8,
             display: false,
             scaleLabel: {
               display: true,
@@ -97,7 +91,6 @@ export default {
     }
   },
   mounted () {
-    // renderChart function renders the chart with the datacollection and options object.
     this.renderChart(this.datacollection, this.options)
   }
 }

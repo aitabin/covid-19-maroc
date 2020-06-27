@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html ang="ar">
+<html lang="ar">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>cov-19-maroc</title>
+    <meta name="description" content="Ingissa website: to track the epidemiological situation resulting from the Corona virus in Morocco">
+    <meta name="author" content="Aitabi Abdelnasser">
+    <meta name="generator" content="">
+    <title>الحالة الوبائية كوفيد-19 بالمغرب</title>
+    <meta property="og:title" content="الحالة الوبائية كوفيد-19 بالمغرب">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aitabin.github.io/covid-19-maroc/index.html">
+    <meta property="og:image" content="https://aitabin.github.io/covid-19-maroc/logo.png">
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:description" content="موقع انغيسا: لتتبع الحالة الوبائية الناتجة عن فيروس كورونا بالمغرب">
+    <meta property="fb:app_id" content="211243446642597">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
   </head>
+  
   <body dir="rtl">
     <div id="app"></div>
     <!-- built files will be auto injected -->  
     <script src="build/build.js"></script> 
+    <!--Facebook Share-->
+    <script>
+        $(function() {
+          $('.cpt').hover(function() {
+            $(this).fadeTo(400,.6);
+          }, function() {
+            $(this).fadeTo(400,1);
+          });
+        });
+    </script>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 </html>

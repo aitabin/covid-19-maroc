@@ -3,64 +3,78 @@
   <div class="hero-head">
     <Navigation></Navigation>
     <instant-chart></instant-chart>
-    <!--
-    <figure class="image is-5by3 is-fullwidth">
-      <img class="is-rounded" src="../assets/image.jpg">
-    </figure>
-    -->
-  </div>
-  <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title has-text-info">
-        مبيانات الحالة الوبائية بالمغرب
+        الحالة الوبائية بالمغرب
       </p>
       <p class="subtitle">
+      بعض المبيانات التراكمية و اليومية + الخريطة الاقليمية للحالة الوبائية بالمغرب
       </p>
     </div>
+    <div class="fb-share-button"
+      data-href="https://aitabin.github.io/covid-19-maroc/index.html"
+      data-layout="button_count" style="padding-bottom=20px;">
+    </div>
+  </div>
+  <div class="hero-body">
         <div class="columns">
-          <div class="column">
-            <p class="subtitle">
-            مبيان اجمالي لتطور الحالة الوبائية
-            </p>
-            <daily-chart></daily-chart>
-          </div>
           <div class="column">
             <p class="subtitle">
             مبيان يومي لتطور الحالة الوبائية
             </p>
-            <daily-bar-chart></daily-bar-chart>
+            <daily-cases></daily-cases>
+          </div>
+          <div class="column">
+            <p class="subtitle">
+            مبيان تراكمي لتطور الحالة الوبائية
+            </p>
+            <comulative-cases></comulative-cases>
           </div>
         </div>
         <div class="columns">
           <div class="column">
             <p class="subtitle">
-            مبيان لنسب الحالات المؤكدة بجهات المغرب
+            مبيان تراكمي لنسب الحالات المؤكدة حسب جهات المغرب
             </p>
             <regions-chart></regions-chart>
           </div>
           <div class="column">
             <p class="subtitle">
-            مبيان يقارن تطور الحالة الوبائية حسب الاشهر
+            مبيان تراكمي لتطور الحالة الوبائية حسب الاشهر
             </p>
-            <compare-chart></compare-chart>
+            <compare-months></compare-months>
           </div>
         </div>
         <div class="columns">
           <div class="column">
             <p class="subtitle">
-            مبيان لنسب التعافي, الاصابات و الوفيات
+            مبيان تراكمي لعدد المتعافين, المرضى و المتوفين
             </p>
-            <current-state-chart></current-state-chart>
+            <global-overview></global-overview>
           </div>
           <div class="column">
             <p class="subtitle">
-            الحالة الوبائية لفيروس كورونا باقاليم المغرب
+             مبيان الحالات المؤكدة اليومية خلال الاسبوعين الماضيين
             </p>
-            <province-map></province-map>
+            <last-two-weeks></last-two-weeks>
+          </div>
+        </div>
+        <div class="columns">
+         <div class="column">
+            <p class="subtitle">
+              الحالة الوبائية حسب الحالات التي تتلقى العلاج -بعض الارقام قد تبدو غير دقيقة نظرا لشح المعطيات-
+            </p>
+                <province-map></province-map>
+          </div>
+          <div class="column">
+            <p class="subtitle">
+              مستجدات الحالة الوبائية بجماعات اقليم سيدي افني حسب المرضى الذين يتلقون العلاج
+            </p>
+                <commune-map></commune-map>
           </div>
         </div>
        </div>
-        <div class="columns">
+  <div class="columns">
           <div class="column">
             <p class="subtitle">
             </p>
@@ -80,67 +94,47 @@
             </div>
           </div>
         </div>
-
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <li class="is-active">
-            <router-link to="/">من نحن؟</router-link>
-          </li>
-          <li>
-            <router-link to="/">وزارة الصحة المغربية</router-link>
-          </li>
-          <li>
-            <router-link to="/">ارقام هامة</router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Ingissa</strong> by <a href="#">Aitabin</a>. The source code is licensed
+      <a href="#">BSD 2-Clause License</a>. The application content
+      is licensed <a href="#"></a>.
+    </p>
   </div>
+</footer>
 </section>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
 import RegionsChart from '@/components/RegionsChart'
-import CurrentStateChart from '@/components/CurrentStateChart'
-import CompareChart from '@/components/CompareChart'
-import DailyChart from '@/components/DailyChart'
-import DailyBarChart from '@/components/DailyBarChart'
-import InstantChart from '@/components/InstantChart'
-import CasesChart from '@/components/CasesChart'
+import GlobalOverview from '@/components/GlobalOverview'
+import CompareMonths from '@/components/CompareMonths'
+import DailyCases from '@/components/DailyCases'
+import ComulativeCases from '@/components/ComulativeCases'
+import GlobalRates from '@/components/GlobalRates'
+import LastTwoWeeks from '@/components/LastTwoWeeks'
+import CommuneMap from '@/components/CommuneMap'
 import ProvinceMap from '@/components/ProvinceMap'
 import RegionMap from '@/components/RegionMap'
 export default {
   name: 'Home',
   components: {
     Navigation,
-    DailyChart,
-    DailyBarChart,
+    DailyCases,
+    ComulativeCases,
     RegionsChart,
-    CurrentStateChart,
-    CompareChart,
-    InstantChart,
-    CasesChart,
+    GlobalOverview,
+    CompareMonths,
+    GlobalRates,
+    LastTwoWeeks,
+    CommuneMap,
     ProvinceMap,
     RegionMap
   }
 }
-$(document).ready(function () {
-  // Check for click events on the navbar burger icon
-  // eslint-disable-next-line no-undef
-  $('.navbar-burger').click(function () {
-    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    // eslint-disable-next-line no-undef
-    $('.navbar-burger').toggleClass('is-active')
-    // eslint-disable-next-line no-undef
-    $('.navbar-menu').toggleClass('is-active')
-  })
-})
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .home {
     display: flex;
@@ -166,4 +160,23 @@ $(document).ready(function () {
     color: #42b983;
     text-decoration: underline;
   }
+  .card-equal-height {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.card-equal-height .card-footer {
+  margin-top: auto;
+}
+.card{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius: 0.5rem;
+}
+.card img{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+border-radius: 0.5rem;
+max-width: 96.5%;
+max-height: 96.5%;
+margin: 0;
+}
 </style>

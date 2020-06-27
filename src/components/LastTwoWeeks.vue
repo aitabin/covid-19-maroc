@@ -7,39 +7,48 @@ export default {
   data () {
     return {
       datacollection: {
-        // Data to be represented on x-axis
         labels: [
-          'المتعافون',
-          'المرضى',
-          'الوفيات'
-
+          '14/يونيو',
+          '15/يونيو',
+          '16/يونيو',
+          '17/يونيو',
+          '18/يونيو',
+          '19/يونيو',
+          '20/يونيو',
+          '21/يونيو',
+          '22/يونيو',
+          '23/يونيو',
+          '24/يونيو',
+          '25/يونيو',
+          '26/يونيو',
+          '27/يونيو'
         ],
         datasets: [{
+          label: 'حالات مؤكدة',
+          backgroundColor: 'red',
+          borderWidth: 3,
+          fill: false,
           data: [
-            7364,
-            652,
-            208
-          ],
-
-          backgroundColor: [
-            '#008000',
-            'rgba(0, 128, 225, 1.0)',
-            'rgba(255, 0, 0, 1.0)'
-
-          ],
-          borderColor: [
-            'rgba(0,255,0,1)',
-            'rgba(0, 128, 225, 1)',
-            'rgba(5255, 0, 0, 1)'
-
-          ],
-          borderWidth: 1
+            101,
+            92,
+            46,
+            66,
+            77,
+            539,
+            226,
+            138,
+            195,
+            172,
+            563,
+            431,
+            295,
+            244
+          ]
         }
         ]
       },
-      // Chart.js options that controls the appearance of the chart
       options: {
-        datasets: { bar: { categoryPercentage: 0.3, barPercentage: 0.6 } },
+        datasets: { bar: { categoryPercentage: 0.6, barPercentage: 0.6 } },
         elements: { line: { fill: false },
           point: {
             radius: 0
@@ -66,8 +75,6 @@ export default {
             }
           }],
           xAxes: [{
-            // barPercentage: 0.6,
-            // categoryPercentage: 1.2,
             display: true,
             stacked: true,
             scaleLabel: {
@@ -96,7 +103,6 @@ export default {
     }
   },
   mounted () {
-    // renderChart function renders the chart with the datacollection and options object.
     this.renderChart(this.datacollection, this.options)
   }
 }

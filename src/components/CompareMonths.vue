@@ -11,16 +11,15 @@ export default {
         datasets: [{
           label: 'الحالات المستبعدة',
           backgroundColor: '#FA944B',
-          data: [2462, 27956, 123370, 93534]// REF:123370
+          data: [2462, 27956, 123370, 441072]// REF:441072-matin
         }, {
           label: 'الحالات المؤكدة',
           backgroundColor: '#0000ff',
-          data: [617, 3806, 3154, 376]// REF: 3154
+          data: [617, 3806, 3154, 4303]// REF: 4059-matin
         }]
       },
-      // Chart.js options that controls the appearance of the chart
       options: {
-        datasets: { bar: { categoryPercentage: 0.3, barPercentage: 0.7 } },
+        datasets: { bar: { categoryPercentage: 0.35, barPercentage: 0.35 } },
         layout: {
           padding: {
             left: 6,
@@ -37,8 +36,6 @@ export default {
         },
         scales: {
           xAxes: [{
-            // barPercentage: 0.3,
-            // categoryPercentage: 0.4,
             display: false,
             stacked: true,
             scaleLabel: {
@@ -51,8 +48,6 @@ export default {
 
           }],
           yAxes: [{
-            // barPercentage: 0.3,
-            // categoryPercentage: 0.4,
             display: true,
             stacked: true,
             scaleLabel: {
@@ -73,7 +68,6 @@ export default {
     }
   },
   mounted () {
-    // renderChart function renders the chart with the datacollection and options object.
     this.renderChart(this.datacollection, this.options)
   }
 }
